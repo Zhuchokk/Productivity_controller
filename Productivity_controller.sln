@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31911.196
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Productivity_controller", "Productivity_controller.csproj", "{DC0F4F9B-0F66-4F89-87C6-4A7F5BF9E572}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DC0F4F9B-0F66-4F89-87C6-4A7F5BF9E572}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC0F4F9B-0F66-4F89-87C6-4A7F5BF9E572}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC0F4F9B-0F66-4F89-87C6-4A7F5BF9E572}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC0F4F9B-0F66-4F89-87C6-4A7F5BF9E572}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {849F6F5E-A65A-440F-9737-558B4FDEA615}
+	EndGlobalSection
+EndGlobal
