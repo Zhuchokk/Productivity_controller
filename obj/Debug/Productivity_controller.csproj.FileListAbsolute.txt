@@ -1,0 +1,10 @@
+D:\ПРОГРАММИРОВАНИЕ\C++,C#,C\Productivity_controller\bin\Debug\Productivity_controller.exe.config
+D:\ПРОГРАММИРОВАНИЕ\C++,C#,C\Productivity_controller\bin\Debug\Productivity_controller.exe
+D:\ПРОГРАММИРОВАНИЕ\C++,C#,C\Productivity_controller\bin\Debug\Productivity_controller.pdb
+D:\ПРОГРАММИРОВАНИЕ\C++,C#,C\Productivity_controller\obj\Debug\Productivity_controller.csproj.AssemblyReference.cache
+D:\ПРОГРАММИРОВАНИЕ\C++,C#,C\Productivity_controller\obj\Debug\Productivity_controller.Properties.Resources.resources
+D:\ПРОГРАММИРОВАНИЕ\C++,C#,C\Productivity_controller\obj\Debug\Productivity_controller.csproj.GenerateResource.cache
+D:\ПРОГРАММИРОВАНИЕ\C++,C#,C\Productivity_controller\obj\Debug\Productivity_controller.csproj.CoreCompileInputs.cache
+D:\ПРОГРАММИРОВАНИЕ\C++,C#,C\Productivity_controller\obj\Debug\Productivity_controller.exe
+D:\ПРОГРАММИРОВАНИЕ\C++,C#,C\Productivity_controller\obj\Debug\Productivity_controller.pdb
+D:\ПРОГРАММИРОВАНИЕ\C++,C#,C\Productivity_controller\obj\Debug\Productivity_controller.Form1.resources
