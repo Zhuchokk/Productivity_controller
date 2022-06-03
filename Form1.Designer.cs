@@ -35,9 +35,9 @@ namespace Productivity_controller
             this.Mood = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Comment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -98,14 +98,14 @@ namespace Productivity_controller
             this.panel1.Size = new System.Drawing.Size(245, 450);
             this.panel1.TabIndex = 1;
             // 
-            // button1
+            // button3
             // 
-            this.button1.Location = new System.Drawing.Point(4, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(235, 28);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "add the results of the past day";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button3.Location = new System.Drawing.Point(4, 81);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(235, 28);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "Clear table";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -116,14 +116,14 @@ namespace Productivity_controller
             this.button2.Text = "Table graph";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // button1
             // 
-            this.button3.Location = new System.Drawing.Point(4, 81);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(235, 28);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Clear table";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button1.Location = new System.Drawing.Point(4, 13);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(235, 28);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "add the results of the past day";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -134,6 +134,7 @@ namespace Productivity_controller
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form1";
             this.Text = "Productivity Controller";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
