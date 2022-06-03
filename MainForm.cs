@@ -90,5 +90,10 @@ namespace Productivity_controller
             form.Show();
             
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Clear();
+        }
     }
 }
