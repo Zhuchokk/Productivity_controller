@@ -61,6 +61,7 @@ namespace Productivity_controller
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(555, 450);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // Date
             // 
@@ -139,6 +140,7 @@ namespace Productivity_controller
             this.Controls.Add(this.dataGridView1);
             this.Name = "MainForm";
             this.Text = "Productivity Controller";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);

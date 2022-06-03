@@ -20,28 +20,56 @@ namespace Productivity_controller
         private void Form1_Load(object sender, EventArgs e)
         {
             string line = "";
-            using(StreamReader reader = new StreamReader(Application.StartupPath + @"\data.txt")){
+            int num = 0;
+            using (StreamReader reader = new StreamReader(Application.StartupPath + @"\data.txt"))
+            {
                 while (line != null)
                 {
                     line = reader.ReadLine();
-                    if(line != null)
+                    if (line != null)
                     {
-                        dataGridView1.Rows.Add(line.Split('|'));
+                        dataGridView1.Rows.Add(line.Replace("$n", "\n").Split('|'));
+                        num += 1;
+                        
                     }
-                    
+
                 }
-                
+
             }
-            
+
 
         }
 
-        
 
         private void button1_Click(object sender, EventArgs e)
         {
             AddForm form = new AddForm(ref dataGridView1);
             form.Show();
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            string line = "";
+            using (StreamWriter writer = new StreamWriter(Application.StartupPath + @"\data.txt"))
+            {
+                for (int i = 0; i < dataGridView1.RowCount; i++)
+                {
+                    for (int j = 0; j < dataGridView1.ColumnCount; j++)
+                    {
+                        if(j != dataGridView1.ColumnCount - 1)
+                        {
+                            line += (string)dataGridView1[j, i].Value + "|";
+                        }
+                        else
+                        {
+                            line += (string)dataGridView1[j, i].Value;
+                        }
+                    }
+                    writer.WriteLine(line.Replace("\n", "$n"));
+                    line = "";
+                }
+                
+            }
         }
     }
 }

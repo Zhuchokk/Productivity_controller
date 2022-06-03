@@ -83,6 +83,11 @@ namespace Productivity_controller
                 MessageBox.Show("Your Comment contains '|', please remove this character", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            if (richTextBox1.Text.Contains("$n"))
+            {
+                MessageBox.Show("Your Comment contains '$n', this character is special, please, remove it.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             dataGrid.Rows.Add(dateTimePicker1.Value.ToShortDateString(), label4.Text, label5.Text, richTextBox1.Text);
             MessageBox.Show("Adding was successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Dispose();
