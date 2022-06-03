@@ -71,5 +71,24 @@ namespace Productivity_controller
                 
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Sort(dataGridView1.Columns[0], ListSortDirection.Descending);
+            int[] lmood = new int[dataGridView1.RowCount];
+            int[] lproductivity = new int[dataGridView1.RowCount];
+            DateTime[] dates = new DateTime[dataGridView1.RowCount];
+            
+
+            for(int i=0; i < dataGridView1.RowCount; i++)
+            {
+                lmood[i] = Convert.ToInt32( dataGridView1[2, i].Value.ToString().Substring(0, dataGridView1[2, i].Value.ToString().Length -1));
+                lproductivity[i] = Convert.ToInt32(dataGridView1[1, i].Value.ToString().Substring(0, dataGridView1[1, i].Value.ToString().Length - 1));
+                dates[i] = DateTime.Parse(dataGridView1[0, i].Value.ToString());
+            }
+            ChartForm form = new ChartForm(lmood, lproductivity, dates);
+            form.Show();
+            
+        }
     }
 }
