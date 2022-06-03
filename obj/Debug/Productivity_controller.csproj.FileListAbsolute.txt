@@ -7,4 +7,5 @@ D:\ПРОГРАММИРОВАНИЕ\C++,C#,C\Productivity_controller\obj\Debug\P
 D:\ПРОГРАММИРОВАНИЕ\C++,C#,C\Productivity_controller\obj\Debug\Productivity_controller.csproj.CoreCompileInputs.cache
 D:\ПРОГРАММИРОВАНИЕ\C++,C#,C\Productivity_controller\obj\Debug\Productivity_controller.exe
 D:\ПРОГРАММИРОВАНИЕ\C++,C#,C\Productivity_controller\obj\Debug\Productivity_controller.pdb
-D:\ПРОГРАММИРОВАНИЕ\C++,C#,C\Productivity_controller\obj\Debug\Productivity_controller.Form1.resources
+D:\ПРОГРАММИРОВАНИЕ\C++,C#,C\Productivity_controller\obj\Debug\Productivity_controller.MainForm.resources
+D:\ПРОГРАММИРОВАНИЕ\C++,C#,C\Productivity_controller\obj\Debug\Productivity_controller.AddForm.resources
