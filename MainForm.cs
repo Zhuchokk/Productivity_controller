@@ -95,5 +95,32 @@ namespace Productivity_controller
         {
             dataGridView1.Rows.Clear();
         }
+
+        bool IsDigitsOnly(string str)
+        {
+            foreach (char c in str)
+            {
+                if (c < '0' || c > '9')
+                    return false;
+            }
+
+            return true;
+        }
+
+        private void dataGridView1_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            if(e.ColumnIndex != 1 && e.ColumnIndex != 2)
+            {
+                return;
+            }
+            string str = e.FormattedValue.ToString();
+            Console.WriteLine(str.Substring(0, str.Length - 1));
+            if (!(str[str.Length - 1] == '%' && IsDigitsOnly(str.Substring(0, str.Length - 1)) && Convert.ToInt32(str.Substring(0, str.Length - 1)) <=100))
+            {
+                ((DataGridView)sender).CancelEdit();
+                MessageBox.Show("The 'Productivity' and 'Mood' fields should only consist of numbers and a % at the end. Also, these fields should not exceed 100", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+                
+        }
     }
 }
