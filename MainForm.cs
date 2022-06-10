@@ -93,7 +93,12 @@ namespace Productivity_controller
 
         private void button3_Click(object sender, EventArgs e)
         {
-            dataGridView1.Rows.Clear();
+            DialogResult res = MessageBox.Show("Do you want to clear all data in table?", "Question", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question,MessageBoxDefaultButton.Button3);
+            if(res == DialogResult.Yes)
+            {
+                dataGridView1.Rows.Clear();
+            }
+            
         }
 
         bool IsDigitsOnly(string str)
