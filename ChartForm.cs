@@ -16,16 +16,15 @@ namespace Productivity_controller
         public int[] lmood;
         public int[] lproductivity;
         public DateTime[] dates;
+        public Row[] rows;
         int dataset;
         SeriesChartType moodtype = SeriesChartType.Column;
         SeriesChartType producttype = SeriesChartType.Column;
 
-        public ChartForm(int[] lm, int[] lp, DateTime[] d)
+        public ChartForm(Row[] r)
         {
             InitializeComponent();
-            lmood = lm;
-            lproductivity = lp;
-            dates = d;
+            rows = r;
             /*//создаем элемент Chart
             Chart myChart = new Chart();
             //кладем его на форму и растягиваем на все окно.
@@ -55,7 +54,7 @@ namespace Productivity_controller
             mySeriesOfPoint.ChartArea = "ChartArea1";
             for (int i=0; i < num; i++)
             {
-                mySeriesOfPoint.Points.AddXY(dates[i], lmood[i]);
+                mySeriesOfPoint.Points.AddXY(rows[i].date, rows[i].mood);
             }
             chart1.Series.Add(mySeriesOfPoint);
 
@@ -64,7 +63,7 @@ namespace Productivity_controller
             mySeriesOfPoint2.ChartArea = "ChartArea1";
             for (int i = 0; i < num; i++)
             {
-                mySeriesOfPoint2.Points.AddXY(dates[i], lproductivity[i]);
+                mySeriesOfPoint2.Points.AddXY(rows[i].date, rows[i].productivity);
             }
             chart1.Series.Add(mySeriesOfPoint2);
         }
@@ -107,7 +106,7 @@ namespace Productivity_controller
             mySeriesOfPoint.ChartArea = "ChartArea1";
             for (int i = 0; i < dataset; i++)
             {
-                mySeriesOfPoint.Points.AddXY(dates[i], lmood[i]);
+                mySeriesOfPoint.Points.AddXY(rows[i].date, rows[i].productivity);
             }
             chart1.Series.Add(mySeriesOfPoint);
 
@@ -116,7 +115,7 @@ namespace Productivity_controller
             mySeriesOfPoint2.ChartArea = "ChartArea1";
             for (int i = 0; i < dataset; i++)
             {
-                mySeriesOfPoint2.Points.AddXY(dates[i], lproductivity[i]);
+                mySeriesOfPoint2.Points.AddXY(rows[i].date, rows[i].productivity);
             }
             chart1.Series.Add(mySeriesOfPoint2);
         }

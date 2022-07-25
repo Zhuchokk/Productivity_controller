@@ -4,14 +4,16 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Text;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Productivity_controller
 {
+    
     public partial class MainForm : Form
     {
+        public DataTable table = new DataTable();
         public MainForm()
         {
             InitializeComponent();
@@ -19,6 +21,7 @@ namespace Productivity_controller
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
             string line = "";
             int num = 0;
             using (StreamReader reader = new StreamReader(Application.StartupPath + @"\data.txt"))
@@ -30,13 +33,13 @@ namespace Productivity_controller
                     {
                         dataGridView1.Rows.Add(line.Replace("$n", "\n").Split('|'));
                         num += 1;
-                        
+
                     }
 
                 }
 
             }
-
+            
 
         }
 
@@ -74,19 +77,26 @@ namespace Productivity_controller
 
         private void button2_Click(object sender, EventArgs e)
         {
-            dataGridView1.Sort(dataGridView1.Columns[0], ListSortDirection.Descending);
+            dataGridView1.Sort(dataGridView1.Columns[0], ListSortDirection.Ascending);
             int[] lmood = new int[dataGridView1.RowCount];
             int[] lproductivity = new int[dataGridView1.RowCount];
             DateTime[] dates = new DateTime[dataGridView1.RowCount];
-            
+            Row[] rows = new Row[ dataGridView1.RowCount ];
 
             for(int i=0; i < dataGridView1.RowCount; i++)
             {
                 lmood[i] = Convert.ToInt32( dataGridView1[2, i].Value.ToString().Substring(0, dataGridView1[2, i].Value.ToString().Length -1));
                 lproductivity[i] = Convert.ToInt32(dataGridView1[1, i].Value.ToString().Substring(0, dataGridView1[1, i].Value.ToString().Length - 1));
                 dates[i] = DateTime.Parse(dataGridView1[0, i].Value.ToString());
+                rows[i] = new Row(dates[i], lproductivity[i], lmood[i]);
             }
-            ChartForm form = new ChartForm(lmood, lproductivity, dates);
+            
+            rows = rows.OrderByDescending(x => x.date.Date).ToArray();
+            foreach(Row row in rows)
+            {
+                Console.WriteLine(row.date);
+            }
+            ChartForm form = new ChartForm(rows);
             form.Show();
             
         }
