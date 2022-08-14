@@ -13,9 +13,6 @@ namespace Productivity_controller
 {
     public partial class ChartForm : Form
     {
-        public int[] lmood;
-        public int[] lproductivity;
-        public DateTime[] dates;
         public Row[] rows;
         int dataset;
         SeriesChartType moodtype = SeriesChartType.Column;
@@ -25,29 +22,8 @@ namespace Productivity_controller
         {
             InitializeComponent();
             rows = r;
-            /*//создаем элемент Chart
-            Chart myChart = new Chart();
-            //кладем его на форму и растягиваем на все окно.
-            myChart.Parent = this;
-
-            myChart.Dock = DockStyle.Fill;
-            //добавляем в Chart область для рисования графиков, их может быть
-            //много, поэтому даем ей имя.
-            myChart.ChartAreas.Add(new ChartArea("Math functions"));
-            //Создаем и настраиваем набор точек для рисования графика, в том
-            //не забыв указать имя области на которой хотим отобразить этот
-            //набор точек.
-            Series mySeriesOfPoint = new Series("Sinus");
-            mySeriesOfPoint.ChartType = SeriesChartType.Line;
-            mySeriesOfPoint.ChartArea = "Math functions";
-            for (double x = -Math.PI; x <= Math.PI; x += Math.PI / 10.0)
-            {
-                mySeriesOfPoint.Points.AddXY(x, Math.Sin(x));
-            }
-            //Добавляем созданный набор точек в Chart
-            myChart.Series.Add(mySeriesOfPoint);*/
             int num = 7;
-            if(lmood.Length < num) { num = lmood.Length; }
+            if(rows.Length < num) { num = rows.Length; }
             dataset = num;
             Series mySeriesOfPoint = new Series("Mood");
             mySeriesOfPoint.ChartType = SeriesChartType.Column;
@@ -72,9 +48,9 @@ namespace Productivity_controller
         {
             if (comboBox3.Text.Contains("7"))
             {
-                if(lmood.Length < 7)
+                if(rows.Length < 7)
                 {
-                    dataset = lmood.Length;
+                    dataset = rows.Length;
                 }
                 else
                 {
@@ -82,9 +58,9 @@ namespace Productivity_controller
                 }
             } else if (comboBox3.Text.Contains("30"))
             {
-                if(lmood.Length < 30)
+                if(rows.Length < 30)
                 {
-                    dataset = lmood.Length;
+                    dataset = rows.Length;
                 }
                 else
                 {
@@ -93,7 +69,7 @@ namespace Productivity_controller
             }
             else
             {
-                dataset = lmood.Length;
+                dataset = rows.Length;
             }
             update();
         }
@@ -106,7 +82,7 @@ namespace Productivity_controller
             mySeriesOfPoint.ChartArea = "ChartArea1";
             for (int i = 0; i < dataset; i++)
             {
-                mySeriesOfPoint.Points.AddXY(rows[i].date, rows[i].productivity);
+                mySeriesOfPoint.Points.AddXY(rows[i].date, rows[i].mood);
             }
             chart1.Series.Add(mySeriesOfPoint);
 
